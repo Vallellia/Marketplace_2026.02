@@ -16,11 +16,7 @@ urlpatterns = [
     path('products/<uuid:pk>/delete/', views.product_delete, name='product_delete'),
 
     # Carrito
-    path(
-        'cart/',
-        views.cart_detail,
-        name='cart_detail'
-    ),
+    path('cart/', views.cart_detail, name='cart_detail'),
 
     path(
         'cart/add/<uuid:product_id>/',
@@ -29,13 +25,13 @@ urlpatterns = [
     ),
 
     path(
-        'cart/remove/<int:item_id>/',
+        'cart/remove/<uuid:item_id>/',
         views.remove_from_cart,
         name='remove_from_cart'
     ),
 
     path(
-        'cart/update/<int:item_id>/',
+        'cart/update/<uuid:item_id>/',
         views.update_cart_item,
         name='update_cart_item'
     ),
