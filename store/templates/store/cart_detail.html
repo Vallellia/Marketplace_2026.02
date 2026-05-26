@@ -7,6 +7,7 @@
 {% if cart.cartitem_set.all %}
 
 <table class="table table-bordered align-middle">
+
     <thead>
         <tr>
             <th>Producto</th>
@@ -22,9 +23,13 @@
     {% for item in cart.cartitem_set.all %}
         <tr>
 
-            <td>{{ item.product.name }}</td>
+            <td>
+                {{ item.product.name }}
+            </td>
 
-            <td>$ {{ item.product.price }}</td>
+            <td>
+                $ {{ item.product.price }}
+            </td>
 
             <td>
                 <form method="POST"
@@ -59,6 +64,7 @@
     {% endfor %}
 
     </tbody>
+
 </table>
 
 <div class="text-end">
